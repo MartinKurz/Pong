@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlsvg="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+
+<!--
+
+		overflow="hidden"
+		scroll="no"
+		scrolling="no"
+-->
+
+	<body
+		id="body"
+		onload="doload()"
+		backgroung-color="red"
+		overflow="hidden"
+	>
+	
+	<!--
+		working: a div is needed. the div size is defined with the style
+		position is fixed, the sides are at max an min values
+		
+		This is not working, if such a style is applied to the SVG itself
+	-->
+	<div
+	
+		backgroung-color="blue"
+		style="position:fixed;top:0px;left:0px;bottom:0px;right:0px;"
+
+		>
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			xmlns:xlink='http://www.w3.org/1999/xlink'
+			id="svg"
+			viewBox="-1200 -800 2400 1600"
+ 			>
+		</svg>
+	</div>
+
+
+	<!--
+		not working: height not matching
+	<div id="svgdiv"
+		>
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			xmlns:xlink='http://www.w3.org/1999/xlink'
+			id="svg"
+			viewBox="-1200 -800 2400 1600"
+			backgroung-color="blue"
+			style="position:fixed;top:0px;left:0px;bottom:0px;right:0px;"
+ 			>
+		</svg>
+	</div>
+	-->
+	<!--
+		not working: height not matching
+	<svg
+		xmlns='http://www.w3.org/2000/svg'
+		xmlns:xlink='http://www.w3.org/1999/xlink'
+		id="svg"
+		viewBox="-1200 -800 2400 1600"
+		backgroung-color="blue"
+		style="position:fixed;top:0px;left:0px;bottom:0px;right:0px;"
+		>
+	</svg>
+	-->
+	
+
+
+	<!--
+		another try: only one of more divs should be used.
+		the div is included in a complex html page
+		style="position:fixed;top:0px;left:0px;bottom:0px;right:0px;"
+		-> ok
+	<div>
+	<p>
+		Paragraph one
+	</p>
+	</div>
+	
+	<div>
+	<p>
+		Paragraph two
+	</p>
+	</div>
+	
+	<div
+	
+		backgroung-color="blue"
+
+		>
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			xmlns:xlink='http://www.w3.org/1999/xlink'
+			id="svg"
+			viewBox="-1200 -800 2400 1600"
+			width="500"
+ 			>
+		</svg>
+	</div>
+	
+	<div>
+	<p>
+		Paragraph three
+	</p>
+	</div>
+	-->
+
+
+	<!--
+		Problem with SVG only: no sound, because it seems to be impossible to add sounds inside SVG
+		Possible solution: not a SVG standalone file, but a small HTML5 document
+		is used. Inside the body of the HTML5 doc the audio elements are added.
+		All of the SVG content is alo added to the body section.
+		Since no visible HTML content is used, the visible content shoulf be the same as
+		with th SVG standalon version.
+		
+		THIS IS THE SVG XHTML/XML VERSION.
+		Problem with this: the SVG content (the only visible) is NOT covering the browser
+		display as expected: while the width fits, the height exceeds the available height
+		of the browser -> scroll bars appear.
+	-->
+
+		<!-- for debugging output -->
+		<script src="util/fireBugConsole.js">
+		</script> 
+		
+		<!-- svg helper methods: -->
+		<script src="util/svg_helper.js">
+		</script> 
+		
+		<!-- the seven segment display: -->
+		<script src="util/sevenSegment.js">
+		</script> 
+		
+		<!-- the game -->
+		<script src="util/pong_new.js">
+		</script> 
+
+	</body>
+</html>
